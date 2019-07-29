@@ -1,7 +1,9 @@
-import 'package:calorie_calculator/views/home.dart';
+import 'package:calorie_calculator/views/view_selection.dart';
 import 'package:flutter/material.dart';
 
+// entrance to app
 void main() => runApp(MyApp());
+
 
 class MyApp extends StatelessWidget {
   @override
@@ -11,7 +13,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.lightBlue,
       ),
-      home: Home()
+      home: ViewSelection()
     );
   }
 }
