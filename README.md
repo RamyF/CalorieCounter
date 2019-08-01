@@ -1,4 +1,5 @@
 # calorie_calculator
+A Flutter application in which the user can track his/her caloric intake, set goals, and view trends.
 
 A new Flutter project.
 
