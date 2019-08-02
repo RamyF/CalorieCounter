@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'home_view.dart';
 import 'add_view.dart';
 import 'history_view.dart';
+import '../main.dart';
 
 // responsible for showing different views based on bottom nav bar selection
 
@@ -26,12 +27,15 @@ class _ViewSelectionState extends State<ViewSelection> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Calorie Counter'),
+        title: Text(appBarText(_currentIndex)),
       ),
       // app body that displays views based on menu selection
       body: _views[_currentIndex],
       // bottom nav bar
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: primaryColor,
+        selectedItemColor: secondaryColor,
+        unselectedItemColor: Colors.white,
         onTap: onTabTapped,
         currentIndex: _currentIndex,
         items: [
@@ -58,4 +62,8 @@ class _ViewSelectionState extends State<ViewSelection> {
       _currentIndex = index;
     });
   }
+
+  // displays different app bar text depending on selection
+  String appBarText(int currentIndex) => (currentIndex == 0) ? 'Home' : (currentIndex == 1) ? 'Add' : 'History';
+  
 }

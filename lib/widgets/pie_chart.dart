@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
+import '../main.dart';
 
 class PieChart extends StatefulWidget {
   @override
@@ -14,8 +15,8 @@ class PieChartState extends State<PieChart> {
   _generateData() {
     // dummy data for chart
     var pieData = [
-      Calories('Consumed', 2100, Colors.lightBlue),
-      Calories('Left', 300, Colors.red),
+      Calories('Consumed', 2100, primaryColor),
+      Calories('Left', 300, Colors.white),
     ];
 
     // pie data added to series
@@ -52,7 +53,8 @@ class PieChartState extends State<PieChart> {
                 arcWidth: 75,
                 arcRendererDecorators: [
                   charts.ArcLabelDecorator(
-                      labelPosition: charts.ArcLabelPosition.outside)
+                      labelPosition: charts.ArcLabelPosition.outside,
+                      outsideLabelStyleSpec: charts.TextStyleSpec(fontSize: 10,color: charts.MaterialPalette.white))
                 ]),
           ),
         ),
