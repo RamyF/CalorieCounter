@@ -3,6 +3,10 @@ A Flutter application in which the user can track his/her caloric intake, set go
 
 A new Flutter project.
 
+## Screenshots 
+
+<img src="assets/Screenshots/HomeViewScreenshot.jpg" height=350>
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
