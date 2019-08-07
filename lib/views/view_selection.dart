@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'home_view.dart';
-import 'add_view.dart';
+import 'add_views.dart';
 import 'history_view.dart';
 import '../main.dart';
 // responsible for showing different views
@@ -73,7 +73,7 @@ class _ViewSelectionState extends State<ViewSelection> with SingleTickerProvider
       controller: _addTabController,
       children: <Widget>[
         AddFood(),
-        AddWeight(),
+        LogWeight(),
       ],
     );
   }

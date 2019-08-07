@@ -1,16 +1,8 @@
 import 'package:flutter/material.dart';
-import './view_selection.dart';
 
+// Views for each tab in Add View
 
-class AddView extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return null;
-  }
-}
-
-
+// add food tab
 class AddFood extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
@@ -20,8 +12,8 @@ class AddFood extends StatelessWidget{
   }
 }
 
-
-class AddWeight extends StatelessWidget{
+// add weight
+class LogWeight extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Container(
