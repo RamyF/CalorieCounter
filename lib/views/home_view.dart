@@ -20,7 +20,7 @@ class HomeView extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(top: 50.0, bottom: 70.0),
+          padding: const EdgeInsets.only(top: 50.0, bottom: 50.0),
           child: Align(
             alignment: Alignment.topCenter,
                 child: SizedBox(
@@ -30,50 +30,47 @@ class HomeView extends StatelessWidget {
             ),
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Container(
-            height: (deviceHeight * .2),
-            width: deviceWidth,
-            child: Card(
-              child: Padding(
-                padding: const EdgeInsets.only(top: 50),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-                    Column(
-                      children: <Widget>[
-                        Text("2400", style: TextStyle(fontSize: 30, fontWeight: FontWeight.w600),),
-                        SizedBox(height: 10,),
-                        Text("GOAL")
-                      ],
-                    ),
-                    Column(
-                      children: <Widget>[
-                        Icon(Icons.remove, size: 30,),
-                      ],
-                    ),
-                    Column(
-                      children: <Widget>[
-                        Text("2100", style: TextStyle(fontSize: 30, fontWeight: FontWeight.w600),),
-                        SizedBox(height: 10,),
-                        Text("FOOD")
-                      ],
-                    ),
-                    Column(
-                      children: <Widget>[
-                        Transform.rotate(angle: (pi / 2), child: Icon(Icons.pause),),
-                      ],
-                    ),
-                    Column(
-                      children: <Widget>[
-                        Text("300", style: TextStyle(fontSize: 30, fontWeight: FontWeight.w600),),
-                        SizedBox(height: 10,),
-                        Text("REMAINING")
-                      ],
-                    ),
-                  ],),
-              ),
+        Container(
+          height: (deviceHeight * .2),
+          width: deviceWidth,
+          child: Card(
+            child: Padding(
+              padding: const EdgeInsets.only(top: 50),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  Column(
+                    children: <Widget>[
+                      Text("2400", style: TextStyle(fontSize: 30, fontWeight: FontWeight.w600),),
+                      SizedBox(height: 10,),
+                      Text("GOAL")
+                    ],
+                  ),
+                  Column(
+                    children: <Widget>[
+                      Icon(Icons.remove, size: 30,),
+                    ],
+                  ),
+                  Column(
+                    children: <Widget>[
+                      Text("2100", style: TextStyle(fontSize: 30, fontWeight: FontWeight.w600),),
+                      SizedBox(height: 10,),
+                      Text("FOOD")
+                    ],
+                  ),
+                  Column(
+                    children: <Widget>[
+                      Transform.rotate(angle: (pi / 2), child: Icon(Icons.pause),),
+                    ],
+                  ),
+                  Column(
+                    children: <Widget>[
+                      Text("300", style: TextStyle(fontSize: 30, fontWeight: FontWeight.w600),),
+                      SizedBox(height: 10,),
+                      Text("REMAINING")
+                    ],
+                  ),
+                ],),
             ),
           ),
         ),
