@@ -5,7 +5,7 @@ A new Flutter project.
 
 ## Screenshots 
 
-<img src="assets/Screenshots/HomeViewScreenshot.jpg" height=350>
+<img src="assets/Screenshots/HomeViewScreenshot.png" height=350>
 
 ## Getting Started
 
