@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
-import '../main.dart';
+import '../../main.dart';
 
 class PieChart extends StatefulWidget {
   @override
@@ -49,13 +49,13 @@ class PieChartState extends State<PieChart> {
             _seriesPieData,
             animate: true,
             animationDuration: Duration(seconds: 2),
-            defaultRenderer: charts.ArcRendererConfig(
-                arcWidth: 75,
-                arcRendererDecorators: [
-                  charts.ArcLabelDecorator(
-                      labelPosition: charts.ArcLabelPosition.outside,
-                      outsideLabelStyleSpec: charts.TextStyleSpec(fontSize: 10,color: charts.MaterialPalette.white))
-                ]),
+            defaultRenderer:
+                charts.ArcRendererConfig(arcWidth: 75, arcRendererDecorators: [
+              charts.ArcLabelDecorator(
+                  labelPosition: charts.ArcLabelPosition.outside,
+                  outsideLabelStyleSpec: charts.TextStyleSpec(
+                      fontSize: 10, color: charts.MaterialPalette.white))
+            ]),
           ),
         ),
       ],

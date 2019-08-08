@@ -12,7 +12,8 @@ class ViewSelection extends StatefulWidget {
   }
 }
 
-class _ViewSelectionState extends State<ViewSelection> with SingleTickerProviderStateMixin{
+class _ViewSelectionState extends State<ViewSelection>
+    with SingleTickerProviderStateMixin {
   // allows app to navigate between 3 choices
   int _currentIndex = 0;
   // different views
@@ -25,15 +26,18 @@ class _ViewSelectionState extends State<ViewSelection> with SingleTickerProvider
   // add view tabs
   // tab display
   final List<Tab> addTabs = <Tab>[
-    Tab(icon: Icon(Icons.fastfood),),
-    Tab(icon: Icon(Icons.poll),)
+    Tab(
+      icon: Icon(Icons.fastfood),
+    ),
+    Tab(
+      icon: Icon(Icons.poll),
+    )
   ];
 
   @override
   void initState() {
     super.initState();
     _addTabController = TabController(length: addTabs.length, vsync: this);
-
   }
 
   @override
@@ -42,8 +46,8 @@ class _ViewSelectionState extends State<ViewSelection> with SingleTickerProvider
     _addTabController.dispose();
   }
 
-  AppBar appBarDisplay(int index){
-    if (index == 1){
+  AppBar appBarDisplay(int index) {
+    if (index == 1) {
       return AppBar(
         title: Text("Add"),
         bottom: TabBar(
@@ -52,23 +56,21 @@ class _ViewSelectionState extends State<ViewSelection> with SingleTickerProvider
           tabs: addTabs,
         ),
       );
-    }
-
-    else{
+    } else {
       return AppBar(
         title: Text(appBarText(_currentIndex)),
       );
     }
   }
 
-
-     // displays different app bar text depending on selection
-  String appBarText(int index) => (index == 0) ? 'Home' : (index == 1) ? 'Add' : 'History';
+  // displays different app bar text depending on selection
+  String appBarText(int index) =>
+      (index == 0) ? 'Home' : (index == 1) ? 'Add' : 'History';
 
   // checks if index is on add tab
   bool isOnAddView(int index) => (index == 1) ? true : false;
 
-  Widget addViews () {
+  Widget addViews() {
     return TabBarView(
       controller: _addTabController,
       children: <Widget>[
@@ -77,14 +79,13 @@ class _ViewSelectionState extends State<ViewSelection> with SingleTickerProvider
       ],
     );
   }
-   
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: appBarDisplay(_currentIndex),
       // app body that displays views based on menu selection
-      body: isOnAddView(_currentIndex)?addViews(): _views[_currentIndex],
+      body: isOnAddView(_currentIndex) ? addViews() : _views[_currentIndex],
       // bottom nav bar
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: primaryColor,
@@ -116,5 +117,4 @@ class _ViewSelectionState extends State<ViewSelection> with SingleTickerProvider
       _currentIndex = index;
     });
   }
-  
 }
