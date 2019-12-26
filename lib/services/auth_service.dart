@@ -12,8 +12,6 @@ class AuthService {
   // signs up user with firebase auth and stores acct in firebase store
   static void signUpUser(BuildContext context, String name, String email, String password) async {
     try {
-      print(email);
-        print(password);
       AuthResult authResult = await _auth.createUserWithEmailAndPassword(
         email: email,
         password: password,

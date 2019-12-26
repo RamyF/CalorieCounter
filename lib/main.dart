@@ -8,6 +8,9 @@ import 'package:flutter/material.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+
+
+
   Widget _checkIfUser() {
     return StreamBuilder<FirebaseUser>(
       stream: FirebaseAuth.instance.onAuthStateChanged,
@@ -24,6 +27,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(primaryColor: Color(0xFF2DAFC5)),
       debugShowCheckedModeBanner: false,
       title: "Calorie Counter",
       home: _checkIfUser(),
