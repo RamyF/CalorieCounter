@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 
-//****************GITIGNORE FIREBASE CREDS */
 // entrance to app
 void main() => runApp(MyApp());
 
