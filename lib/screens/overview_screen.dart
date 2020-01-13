@@ -13,8 +13,8 @@ class OverviewScreen extends StatefulWidget {
 class _OverviewScreenState extends State<OverviewScreen> {
   @override
   Widget build(BuildContext context) {
-    var user = Provider.of<User>(context);
-    print(user.email);
+    User user = Provider.of<User>(context);
+    print(user);
 
 
     return Scaffold(

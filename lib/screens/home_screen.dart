@@ -18,6 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
   // bottom nav index
   int _currentTab = 0;
   PageController _pageController;
+  String userID;
 
   @override
   void initState() {
@@ -34,9 +35,12 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     var user = Provider.of<FirebaseUser>(context);
+    String userID = user.uid;
+
 
     return StreamProvider<User>.value(
-      value: DataBaseService().userStream(user.uid),
+      value: DataBaseService().userStream(userID),
+      catchError: ((_, e) => print(e.toString()),
           child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.black,

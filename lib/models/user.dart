@@ -14,7 +14,8 @@ class User{
       this.monthlyCals,
       this.monthlyWeights});
 
-  factory User.fromMap(Map data) {
+  factory User.fromMap(Map<String, dynamic> data) {
+    print(data);
     return User(
       name: data['name'],
       email: data['email'],
@@ -22,5 +23,6 @@ class User{
       monthlyCals: data['monthlyCals'],
       monthlyWeights: data['monthlyWeights'],
     );
+    
   }
 }
