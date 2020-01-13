@@ -14,24 +14,17 @@ class _OverviewScreenState extends State<OverviewScreen> {
   @override
   Widget build(BuildContext context) {
     User user = Provider.of<User>(context);
-    print(user);
-
 
     return Scaffold(
       backgroundColor: Colors.black,
-      body: Column(
-        children: <Widget>[
-          Center(
-            child: FlatButton(
-              onPressed: () => AuthService.logout(),
-              child: Text(
-                "Logout",
-                style: TextStyle(color: Theme.of(context).primaryColor),
-              ),
-            ),
+      body: Center(
+        child: FlatButton(
+          onPressed: () => AuthService.logout(),
+          child: Text(
+            'Logout',
+            style: TextStyle(color: Theme.of(context).primaryColor),
           ),
-          
-        ],
+        ),
       ),
     );
   }

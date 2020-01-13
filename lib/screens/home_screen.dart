@@ -40,7 +40,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return StreamProvider<User>.value(
       value: DataBaseService().userStream(userID),
-      catchError: ((_, e) => print(e.toString()),
           child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.black,

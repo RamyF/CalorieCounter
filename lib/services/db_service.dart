@@ -6,7 +6,6 @@ class DataBaseService{
 
 
   // fetch user data from Firestore
-  // TODO figure out why stream is not creating user objects.
   Stream<User> userStream(String id) {
     return _db.collection('users').document(id).snapshots().map((snapshot) => User.fromMap(snapshot.data));
   }

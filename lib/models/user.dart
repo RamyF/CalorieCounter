@@ -1,11 +1,9 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/foundation.dart';
 
 class User{
   String name, email, profileImageURL;
   // both arrays hold 30 nums
-  List<int> monthlyCals;
-  List<double> monthlyWeights;
+  List monthlyCals;
+  List monthlyWeights;
 
   User(
       {this.name,
@@ -15,11 +13,10 @@ class User{
       this.monthlyWeights});
 
   factory User.fromMap(Map<String, dynamic> data) {
-    print(data);
     return User(
       name: data['name'],
       email: data['email'],
-      profileImageURL: data['profileImageURL'],
+      profileImageURL: data['profileImageUrl'],
       monthlyCals: data['monthlyCals'],
       monthlyWeights: data['monthlyWeights'],
     );
