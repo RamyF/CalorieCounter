@@ -42,7 +42,8 @@ class _HomeScreenState extends State<HomeScreen> {
       value: DataBaseService().userStream(userID),
           child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.black,
+          backgroundColor: Color(0xFF242424),
+          elevation: 0.0,
           leading: Padding(
             padding: const EdgeInsets.only(top: 8.0, left: 8.0),
             child: GestureDetector(
@@ -105,15 +106,15 @@ class _HomeScreenState extends State<HomeScreen> {
           },
           items: [
             TitledNavigationBarItem(
-                title: 'Home', icon: Icons.home, backgroundColor: Colors.black),
+                title: 'Home', icon: Icons.home, backgroundColor: Color(0xFF242424)),
             TitledNavigationBarItem(
                 title: 'History',
                 icon: Icons.show_chart,
-                backgroundColor: Colors.black),
+                backgroundColor: Color(0xFF242424)),
             TitledNavigationBarItem(
                 title: 'Account',
                 icon: Icons.account_circle,
-                backgroundColor: Colors.black),
+                backgroundColor: Color(0xFF242424)),
           ],
         ),
       ),

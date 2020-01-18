@@ -4,13 +4,17 @@ class User{
   // both arrays hold 30 nums
   List monthlyCals;
   List monthlyWeights;
+  int currentCals;
+  int calGoal;
 
   User(
       {this.name,
       this.email,
       this.profileImageURL,
       this.monthlyCals,
-      this.monthlyWeights});
+      this.monthlyWeights,
+      this.calGoal,
+      this.currentCals});
 
   factory User.fromMap(Map<String, dynamic> data) {
     return User(
@@ -19,6 +23,8 @@ class User{
       profileImageURL: data['profileImageUrl'],
       monthlyCals: data['monthlyCals'],
       monthlyWeights: data['monthlyWeights'],
+      currentCals: data['currentCals'],
+      calGoal: data['calGoal'],
     );
     
   }

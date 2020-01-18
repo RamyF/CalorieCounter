@@ -36,7 +36,9 @@ class MyApp extends StatelessWidget {
     return StreamProvider<FirebaseUser>.value(
       value: FirebaseAuth.instance.onAuthStateChanged,
       child: MaterialApp(
-        theme: ThemeData(primaryColor: Color(0xFF2DAFC5)),
+        theme: ThemeData(
+          primaryColor: Color(0xFF2DAFC5),
+        ),
         debugShowCheckedModeBanner: false,
         title: "Calorie Counter",
         home: _checkIfUser(),
@@ -57,7 +59,8 @@ class LoadingIndicator extends StatelessWidget {
       color: Colors.black,
       child: Center(
         child: CircularProgressIndicator(
-          valueColor: AlwaysStoppedAnimation<Color>(Theme.of(context).primaryColor),
+          valueColor:
+              AlwaysStoppedAnimation<Color>(Theme.of(context).primaryColor),
         ),
       ),
     );
