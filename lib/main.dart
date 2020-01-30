@@ -38,6 +38,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         theme: ThemeData(
           primaryColor: Color(0xFF2DAFC5),
+          cardColor: Color(0xFF242424)
         ),
         debugShowCheckedModeBanner: false,
         title: "Calorie Counter",

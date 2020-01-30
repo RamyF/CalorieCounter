@@ -11,15 +11,14 @@ class OverviewScreen extends StatefulWidget {
 }
 
 class _OverviewScreenState extends State<OverviewScreen> {
-  final Color cardColor = Color(0xFF00315F);
   Widget buildCalCard(User user) {
     return Container(
-      height: 200.0,
+      height: 210.0,
+      margin: EdgeInsets.only(left: 8.0, right: 8.0),
       child: Card(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10.0),
         ),
-        color: Colors.black,
         child: Column(
           children: <Widget>[
             Row(
@@ -30,7 +29,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
                   child: Text(
                     'Today\'s Calories',
                     style: TextStyle(
-                      fontSize: 30.0,
+                      fontSize: 40.0,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                     ),
@@ -53,7 +52,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
                         style: TextStyle(
                             fontSize: 50.0,
                             fontWeight: FontWeight.bold,
-                            color: Color(0xFF1C6267)),
+                            color:Theme.of(context).primaryColor),
                       ),
                 Text(
                   ' / ${user.calGoal}',
@@ -64,15 +63,12 @@ class _OverviewScreenState extends State<OverviewScreen> {
                 ),
               ],
             ),
-            SizedBox(
-              height: 10.0,
-            ),
             Row(
               children: <Widget>[
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: LinearPercentIndicator(
-                    width: MediaQuery.of(context).size.width - 50,
+                    width: MediaQuery.of(context).size.width - 60,
                     animation: true,
                     lineHeight: 25.0,
                     animationDuration: 1250,
@@ -81,7 +77,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
                         : (user.currentCals / user.calGoal),
                     linearStrokeCap: LinearStrokeCap.roundAll,
                     progressColor: ((user.currentCals / user.calGoal) <= 1.0)
-                        ? Color(0xFF1C6267)
+                        ? Theme.of(context).primaryColor
                         : Colors.red,
                   ),
                 ),
@@ -99,19 +95,19 @@ class _OverviewScreenState extends State<OverviewScreen> {
 
     return Scaffold(
       backgroundColor: Colors.black,
-      body: Column(
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.only(top: 20.0, left: 5.0, right: 5.0),
-            child: buildCalCard(user),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 10, left: 5.0, right: 5.0),
-            child: Card(
-              color: cardColor,
+      body: SingleChildScrollView(
+              child: Column(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.only(top: 10.0),
+              child: buildCalCard(user),
             ),
-          ),
-        ],
+            Padding(
+              padding: const EdgeInsets.only(top: 20.0, left: 5.0, right: 5.0),
+              child: Text('TODO')
+            ),
+          ],
+        ),
       ),
     );
   }
