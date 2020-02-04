@@ -29,7 +29,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
                   child: Text(
                     'Today\'s Calories',
                     style: TextStyle(
-                      fontSize: 40.0,
+                      fontSize: 30.0,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                     ),
@@ -43,23 +43,23 @@ class _OverviewScreenState extends State<OverviewScreen> {
                     ? Text(
                         '${user.currentCals}',
                         style: TextStyle(
-                            fontSize: 50.0,
+                            fontSize: 70.0,
                             fontWeight: FontWeight.bold,
                             color: Colors.red),
                       )
                     : Text(
                         '${user.currentCals}',
                         style: TextStyle(
-                            fontSize: 50.0,
+                            fontSize: 70.0,
                             fontWeight: FontWeight.bold,
-                            color:Theme.of(context).primaryColor),
+                            color: Theme.of(context).primaryColor),
                       ),
                 Text(
                   ' / ${user.calGoal}',
                   style: TextStyle(
                       fontSize: 25.0,
                       fontWeight: FontWeight.bold,
-                      color: Colors.grey),
+                      color: Colors.white),
                 ),
               ],
             ),
@@ -96,15 +96,23 @@ class _OverviewScreenState extends State<OverviewScreen> {
     return Scaffold(
       backgroundColor: Colors.black,
       body: SingleChildScrollView(
-              child: Column(
+        physics: AlwaysScrollableScrollPhysics(),
+        child: Column(
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.only(top: 10.0),
               child: buildCalCard(user),
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 20.0, left: 5.0, right: 5.0),
-              child: Text('TODO')
+            Container(
+              height: 300.0,
+              width: MediaQuery.of(context).size.width - 50,
+              child: Card(
+                color: Colors.white,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+                child: Center(child: Text("TODO"),),
+              ),
             ),
           ],
         ),

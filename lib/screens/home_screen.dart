@@ -19,6 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
   int _currentTab = 0;
   PageController _pageController;
   String userID;
+  final _formKey = GlobalKey<FormState>();
 
   @override
   void initState() {
@@ -37,10 +38,9 @@ class _HomeScreenState extends State<HomeScreen> {
     var user = Provider.of<FirebaseUser>(context);
     String userID = user.uid;
 
-
     return StreamProvider<User>.value(
       value: DataBaseService().userStream(userID),
-          child: Scaffold(
+      child: Scaffold(
         appBar: AppBar(
           backgroundColor: Color(0xFF242424),
           elevation: 0.0,
@@ -84,7 +84,42 @@ class _HomeScreenState extends State<HomeScreen> {
           },
         ),
         floatingActionButton: FloatingActionButton(
-          onPressed: () => print('add'),
+          // TODO: implement add modal
+          onPressed: () {
+            showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return AlertDialog(
+                    content: Form(
+                      key: _formKey,
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: <Widget>[
+                          Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: TextFormField(),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: TextFormField(),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: RaisedButton(
+                              child: Text("Submitß"),
+                              onPressed: () {
+                                if (_formKey.currentState.validate()) {
+                                  _formKey.currentState.save();
+                                }
+                              },
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  );
+                });
+          },
           backgroundColor: Theme.of(context).primaryColor,
           foregroundColor: Colors.black,
           child: Icon(Icons.add),
@@ -106,7 +141,9 @@ class _HomeScreenState extends State<HomeScreen> {
           },
           items: [
             TitledNavigationBarItem(
-                title: 'Home', icon: Icons.home, backgroundColor: Color(0xFF242424)),
+                title: 'Home',
+                icon: Icons.home,
+                backgroundColor: Color(0xFF242424)),
             TitledNavigationBarItem(
                 title: 'History',
                 icon: Icons.show_chart,
@@ -121,3 +158,4 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
