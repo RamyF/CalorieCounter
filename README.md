@@ -5,9 +5,9 @@ A new Flutter project.
 
 ## Screenshots 
 
-<img src="Screenshot_1577352874.png" height=350>
-<img src="Screenshot_1577352897.png" height=350>
-<img src="Screenshot_1577352902.png" height=350>
+<img src="assets/Screenshots/Screenshot_1577352874.png" height=350>
+<img src="assets/Screenshots/Screenshot_1577352897.png" height=350>
+<img src="assets/Screenshots/Screenshot_1577352902.png" height=350>
 
 ## Getting Started
 
